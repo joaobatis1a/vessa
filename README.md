@@ -1,6 +1,6 @@
 # VESSA
 
-**Landing page de moda** · Next.js · TypeScript · Tailwind CSS
+**Landing page de moda** · Next.js · TypeScript · Tailwind CSS · Framer Motion
 
 [![Demo ao vivo](https://img.shields.io/badge/demo-online-BD5B35?style=flat-square)](https://vessa-atelie.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org)
@@ -9,71 +9,64 @@
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-BD5B35?style=flat-square)](LICENSE)
 
-Landing page para a **VESSA**, uma marca de moda **fictícia** criada para este projeto. O conceito é "bonita até do avesso": roupas leves de costura aparente, feitas à mão em pequenas tiragens. A página inteira é costurada por um fio animado, que nasce no logo, atravessa cada seção com curvas e nós e termina amarrado no footer.
+Landing page editorial para a VESSA, uma marca de roupas leves de costura aparente. A página inteira é costurada por um fio animado que nasce no logo, atravessa cada seção com curvas e nós e termina amarrado no footer, com galeria horizontal, hotspots de produto e pedidos que caem direto no WhatsApp.
 
 🔗 **Demo:** [vessa-atelie.vercel.app](https://vessa-atelie.vercel.app)
 
 ![Captura de tela da VESSA](docs/img/preview.png)
 
-> Projeto de portfólio. A VESSA não existe: nome, textos, produtos e locais foram inventados, e as fotos são ilustrativas do [Unsplash](https://unsplash.com/license).
+> Projeto pessoal de portfólio. "VESSA" é uma marca fictícia: nome, conceito, textos, produtos e locais foram criados para este projeto, e as fotos são ilustrativas do [Unsplash](https://unsplash.com/license).
+
+## Sobre o projeto
+
+O conceito da marca é "bonita até do avesso": roupa feita à mão, em pequenas tiragens, com o mesmo cuidado no lado de dentro e no de fora. A interface traduz isso num elemento só, o fio, que costura a navegação de ponta a ponta e leva uma agulha na ponta: à frente, um alinhavo pontilhado mostra o caminho; atrás, o fio sólido marca o que já foi visto.
+
+O objetivo foi ir além do template de landing page: animações com intenção, cenas de scroll que tocam uma vez e liberam a navegação, e desempenho medido. A rolagem caiu de 88% para 3% de quadros travados depois de mover toda a geometria do fio para JavaScript puro, sem consultas ao DOM durante o scroll.
 
 ## Funcionalidades
 
-- **O fio**: um SVG curvo e orgânico que nasce no logo, atravessa a página inteira com nós e ondulações, é "costurado" conforme o scroll (alinhavo pontilhado à frente, fio sólido atrás) e leva uma agulha na ponta
+- **O fio**: SVG orgânico com nós e ondulações que é "costurado" conforme o scroll, no desktop e no mobile
 - Menu hambúrguer em tela cheia com revelação circular, categorias e preview de foto no hover
 - Hero com wordmark gigante e colagem de fotos com parallax pelo mouse
 - Manifesto fixado no scroll, com as palavras acendendo uma a uma
-- As cenas de scroll tocam uma única vez: as revelações não voltam em reverse, e as seções fixadas viram seções normais depois da primeira passagem
-- Coleção em galeria horizontal fixada no scroll na primeira passagem, que depois vira carrossel livre (arrastar, deslizar, trackpad e setas): cards em arco com etiqueta de roupa pendurada que balança com o movimento
-- Produto destaque com hotspots na foto e seletor de tamanho que vai direto para a mensagem do WhatsApp
+- Coleção em galeria horizontal fixada no scroll, que depois vira carrossel livre (arrastar, deslizar, trackpad e setas), com etiquetas de roupa que balançam com o movimento
+- Produto destaque com hotspots na foto e seletor de tamanho que monta a mensagem do WhatsApp
 - "Onde encontrar" em painéis expansíveis com foto de cada ponto, alternando sozinhos
-- Revenda com spotlight que segue o mouse e formulário em 3 etapas que monta a mensagem no WhatsApp
+- Revenda com spotlight que segue o mouse e formulário em 3 etapas
 - Comunidade em carrossel contínuo de fotos e CTA final com imagem que se expande no scroll
-- Footer com o fio fechando a narrativa e botão "voltar ao topo" giratório
-- Scroll suave, textura de grão e desempenho medido (geometria do fio calculada em JS, sem consultas ao DOM durante o scroll)
-- Eventos de analytics (GA4 / Meta Pixel) nos cliques de WhatsApp e no envio do formulário de revenda
-- SEO completo: metadata, OpenGraph, `sitemap.xml`, `robots.txt`, JSON-LD (`ClothingStore`)
-
-Todo o conteúdo editável (produtos, locais, links do menu, fotos) fica em `src/lib/content.ts`.
+- Analytics (GA4 / Meta Pixel) nos cliques de WhatsApp e no envio do formulário de revenda
+- SEO: metadata, OpenGraph, `sitemap.xml`, `robots.txt` e JSON-LD (`ClothingStore`)
 
 ## Stack
 
-- [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
-- Tailwind CSS v4
-- [Framer Motion](https://www.framer.com/motion/) para todas as animações e o fio
-- [Lenis](https://lenis.darkroom.engineering/) para o scroll suave
+- **[Next.js 16](https://nextjs.org)** (App Router) + **React 19** + **TypeScript**
+- **[Tailwind CSS v4](https://tailwindcss.com)**, tokens da marca em `src/app/globals.css`
+- **[Framer Motion](https://www.framer.com/motion/)**, todas as animações e o fio
+- **[Lenis](https://lenis.darkroom.engineering/)**, scroll suave
+- **[Vercel](https://vercel.com)**, deploy
 
-Projeto **frontend-only**: não há backend nem banco de dados. O formulário de revenda e os CTAs de produto convertem direto em um link do WhatsApp (`wa.me`) com mensagem pré-preenchida.
+Projeto **frontend-only**: não há backend nem banco de dados. O formulário de revenda e os CTAs de produto convertem direto em um link do WhatsApp (`wa.me`) com mensagem pré-preenchida. Todo o conteúdo editável (produtos, locais, menu e fotos) fica em `src/lib/content.ts`.
 
-## Rodando localmente
+## Como rodar localmente
 
 ```bash
 git clone https://github.com/joaobatis1a/vessa.git
 cd vessa
 npm install
-cp .env.example .env.local
+cp .env.example .env.local   # opcional: WhatsApp, Instagram, GA4 e Meta Pixel
 npm run dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000). Sem `.env.local`, o site roda com os valores de exemplo.
+Abra [http://localhost:3000](http://localhost:3000). Sem `.env.local`, o site roda normalmente com os valores de exemplo.
 
-### Variáveis de ambiente
+## Autor
 
-| Variável | Para quê |
-|---|---|
-| `NEXT_PUBLIC_SITE_URL` | URL de produção (metadata, sitemap, robots, OpenGraph) |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Número no formato `55DDDNUMERO`, sem símbolos |
-| `NEXT_PUBLIC_INSTAGRAM_URL` | Link do perfil no Instagram |
-| `NEXT_PUBLIC_GA_ID` | ID do Google Analytics 4 (`G-XXXXXXX`); se vazio, o script não carrega |
-| `NEXT_PUBLIC_META_PIXEL_ID` | ID do Meta Pixel; se vazio, o script não carrega |
+**João Batista da Silva Neto**
 
-## Deploy
-
-```bash
-npm i -g vercel
-vercel --prod
-```
+- GitHub: [@joaobatis1a](https://github.com/joaobatis1a)
+- LinkedIn: [joao-batista-silva-neto](https://linkedin.com/in/joao-batista-silva-neto)
+- E-mail: [profissionalba1is1a@gmail.com](mailto:profissionalba1is1a@gmail.com)
 
 ## Licença
 
-Código distribuído sob a licença MIT. Veja [LICENSE](LICENSE). As fotos seguem a [licença do Unsplash](https://unsplash.com/license).
+Distribuído sob a licença MIT. Veja [`LICENSE`](LICENSE) para mais detalhes. As fotos seguem a [licença do Unsplash](https://unsplash.com/license).
