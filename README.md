@@ -21,7 +21,7 @@ Landing page editorial para a VESSA, uma marca de roupas leves de costura aparen
 
 O conceito da marca é "bonita até do avesso": roupa feita à mão, em pequenas tiragens, com o mesmo cuidado no lado de dentro e no de fora. A interface traduz isso num elemento só, o fio, que costura a navegação de ponta a ponta e leva uma agulha na ponta: à frente, um alinhavo pontilhado mostra o caminho; atrás, o fio sólido marca o que já foi visto.
 
-O objetivo foi ir além do template de landing page: animações com intenção, cenas de scroll que tocam uma vez e liberam a navegação, e desempenho medido. A rolagem caiu de 88% para 3% de quadros travados depois de mover toda a geometria do fio para JavaScript puro, sem consultas ao DOM durante o scroll.
+O objetivo foi ir além do template de landing page: animações com intenção, cenas de scroll que tocam uma vez e liberam a navegação, e atenção ao desempenho. A geometria do fio foi movida para JavaScript puro, sem consultas ao DOM durante o scroll, para reduzir travamentos.
 
 ## Funcionalidades
 
