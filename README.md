@@ -61,7 +61,7 @@ Abra [http://localhost:3000](http://localhost:3000). Sem `.env.local`, o site ro
 
 ## Autor
 
-**João Batista da Silva Neto**
+**João Batista Neto**
 
 - GitHub: [@joaobatis1a](https://github.com/joaobatis1a)
 - LinkedIn: [joao-batista-silva-neto](https://linkedin.com/in/joao-batista-silva-neto)
